@@ -1,0 +1,19 @@
+<div class="hero-unit">
+	<div class="container">
+		<h1>The top 250 movies OF ALL TIME</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="container">
+		<table class="table table-hover">
+			<% @movies.each do |movie| %>
+				<tr>
+					<td><a href="/<%= movie.title[3..-1] %>"><p class="lead"><%= movie.title %></p></a></td>
+				</tr>
+
+			<% end %>
+
+		</table>
+
+	</div>
+</div>

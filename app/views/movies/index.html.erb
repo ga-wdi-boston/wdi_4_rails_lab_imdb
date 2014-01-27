@@ -1,0 +1,15 @@
+<div class="hero-unit">
+	<div class="container">
+		<h1>The top 250 movies OF ALL TIME</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="container">
+		<ol>
+		<% @movies.each do |movie| %>
+			<li><a href="/<%= movie.title[3..-1] %>"><p class="lead"><%= movie.title %></p></a></li>
+
+		<% end %>
+		</0l>
+	</div>
+</div>

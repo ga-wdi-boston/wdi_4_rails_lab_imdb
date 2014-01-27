@@ -5,5 +5,6 @@ class MoviesController < ApplicationController
 
   def show
   	@movie = Imdb::Search.new(params[:name]).movies.first
+  	@cast = @movie.cast_members_characters
   end
 end

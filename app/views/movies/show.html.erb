@@ -1,44 +1,45 @@
-<div class="hero-unit">
-	<div class="container">
-		<h1><a href="<%= @movie.url %>" target="_blank"><%= @movie.title %></a><br><small><%= @movie.tagline %></small></h1>
-	</div>
-</div>
-<div class="row">
-	<div class="container">
-		<table class="table">
-  		<tr>
-  			<td>Length</td>
-  			<td><%= @movie.length %> minutes</td>
-  		</tr>
-  		<tr>
-  			<td>Genre</td>
-  			<td>
-	  			<% @movie.genres.each do |genre| %>
-	  			<span><%= genre %> </span>
-	  			<% end %>
-  			</td>
-  		</tr>
-  		<tr>
-  			<td>Plot</td>
-  			<td><%= @movie.plot %></td>
-  		</tr>
-  		<tr>
-		</table>
-		<div class="row">
-			<div class="page-header">
-				<h1>Cast Members</h1>
-			</div>
-			<% @movie.cast_members_characters.each_slice(5) do |members_char| %>
-				<div class="span6">
-					<ul>
-						<% members_char.each do |member_char| %>
-							<% member_array = member_char.split(' => ') %>
-							<li><p class="lead"><%= member_array[0] %>:  <%= member_array[1] %></p></li>
-						<% end %>
-					</ul>
-				</div>
-			<% end %>
+<div class="page" style="background: url('<%= @movie.poster %>') no-repeat center 20% fixed; background-size: cover;">
+	<div class="hero-unit">
+		<div class="container">
+			<h1><a href="<%= @movie.url %>" target="_blank"><%= @movie.title %></a><br><small><%= @movie.tagline %></small></h1>
 		</div>
+	</div>
+	<div class="row">
+		<div class="container">
+			<table class="table white" >
+	  		<tr>
+	  			<td>Length</td>
+	  			<td><%= @movie.length %> minutes</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Genre</td>
+	  			<td>
+		  			<% @movie.genres.each do |genre| %>
+		  			<span><%= genre %> </span>
+		  			<% end %>
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td>Plot</td>
+	  			<td><%= @movie.plot %></td>
+	  		</tr>
+			</table>
+			<div class="row white">
+				<div class="page-header">
+					<h1>Cast Members</h1>
+				</div>
+				<% @cast.each_slice(5) do |members_obj| %>
+					<div class="span6">
+						<ul>
+							<% members_obj.each do |member| %>
+								<% member_array = member.split(' => ') %>
+								<li><p class="lead"><%= member_array[0] %>:  <%= member_array[1] %></p></li>
+							<% end %>
+						</ul>
+					</div>
+				<% end %>
+			</div>
 
+		</div>
 	</div>
 </div>

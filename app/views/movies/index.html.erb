@@ -5,11 +5,15 @@
 </div>
 <div class="row">
 	<div class="container">
-		<ol>
-		<% @movies.each do |movie| %>
-			<li><a href="/<%= movie.title[3..-1] %>"><p class="lead"><%= movie.title %></p></a></li>
+		<table class="table table-hover">
+			<% @movies.each do |movie| %>
+				<tr>
+					<td><a href="/<%= movie.title[3..-1] %>"><p class="lead"><%= movie.title %></p></a></td>
+				</tr>
 
-		<% end %>
-		</0l>
+			<% end %>
+
+		</table>
+
 	</div>
 </div>
